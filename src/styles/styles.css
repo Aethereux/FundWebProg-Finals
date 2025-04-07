@@ -1,0 +1,214 @@
+:root {
+    --primary-color: #1a73e8;
+    --secondary-color: #fbbc05;
+    --background-color: #f4f4f4;
+    --text-color: #ffffff;
+    --accent-color: #34a853;
+    --navbar-bg: #000000;
+    --navbar-text: #ffffff;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    background-color: #f4f4f400;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    height: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.MainContainer {
+    margin: 0 auto;
+    padding: 0;
+    background-color: #000000;
+}
+
+.burger-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20px;
+    height: 10px;
+    cursor: pointer;
+}
+
+.burger-button span {
+    display: block;
+    height: 2px;
+    background-color: var(--navbar-text);
+    border-radius: 2px;
+}
+
+.LandingPage {
+    background-image: url('../assets/ModifiedBackground1.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.LandingPageText h1 {
+    font-family: 'Baskervville', serif;
+    font-weight: 400;
+    font-size: 2rem;
+    color: var(--navbar-text);
+    max-width: 100%;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.ContactUsCTA {
+    font-family: 'Montseratt', sans-serif;
+    font-weight: normal;
+    font-size: 0.7rem;
+    color: var(--navbar-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-align: center;
+    letter-spacing: 3px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navbar {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    color: var(--navbar-text);
+    padding-top: 4vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.navbar img {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 5vw;
+}
+
+.navbar ul li {
+    color: var(--navbar-text);
+    cursor: pointer;
+}
+
+
+/* Second Section */
+
+.AboutUs {
+    background-color: #1D202B;
+    width: 100vw;
+    height: 80vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.AboutUs p {
+    font-family: 'Baskervville', serif;
+    font-weight: 400;
+}
+.AboutUs h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    color: var(--navbar-text);
+    max-width: 100%;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* General styles for larger screens (default) */
+.AboutUsContainer {
+    display: flex;
+    flex-direction: column; /* Stacks MissionText and ContentRow vertically */
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Adds spacing between MissionText and ContentRow */
+    text-align: center;
+    padding: 20px;
+}
+
+.ContentRow {
+    display: flex; /* Enables Flexbox layout for VisionText, Logo, and CoreValues */
+    justify-content: space-between; /* Distributes items evenly */
+    align-items: center; /* Aligns items vertically */
+    gap: 20px; /* Adds spacing between VisionText, Logo, and CoreValues */
+    width: 100%; /* Ensures the row spans the full width */
+    max-width: 1200px; /* Optional: Limits the row width for better layout */
+}
+
+.VisionText, .CoreValues {
+    flex: 1; /* Ensures VisionText and CoreValues take equal space */
+    text-align: center; /* Centers text inside these sections */
+}
+
+.Logo {
+    flex: 0; /* Keeps the logo at its natural size */
+    display: flex;
+    justify-content: center; /* Centers the logo horizontally */
+    align-items: center; /* Centers the logo vertically */
+}
+
+/* Responsive styles for smaller screens (mobile devices) */
+@media (max-width: 768px) {
+    .AboutUsContainer {
+        display: flex;
+        flex-direction: column; /* Stacks all elements vertically */
+        align-items: center; /* Centers all elements horizontally */
+        gap: 20px; /* Adds spacing between elements */
+    }
+
+    .ContentRow {
+        flex-direction: column; /* Stacks VisionText, Logo, and CoreValues vertically */
+        gap: 10px; /* Reduces spacing for smaller screens */
+    }
+
+    .Logo {
+        order: -1; /* Moves the Logo to the top of the AboutUsContainer */
+        margin-bottom: 20px; /* Adds spacing below the logo */
+    }
+
+    .MissionText {
+        order: 0; /* Ensures MissionText appears below the Logo */
+    }
+
+    .VisionText, .CoreValues {
+        flex: unset; /* Removes equal space distribution */
+        width: 100%; /* Makes VisionText and CoreValues span the full width */
+    }
+
+    .AboutUs h1 {
+        font-size: 1.5rem; /* Reduces font size for headings */
+    }
+
+    .AboutUs p {
+        font-size: 1rem; /* Reduces font size for paragraphs */
+    }
+}
