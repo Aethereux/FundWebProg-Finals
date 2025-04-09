@@ -719,6 +719,27 @@ textarea::placeholder {
   letter-spacing: 5px;
 }
 
+.NewsletterSection {
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+}
+
+.NewsletterSection label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.NewsletterSection p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 5px;
+}
+
 input {
   padding: 5px;
   margin-top: 5px;
