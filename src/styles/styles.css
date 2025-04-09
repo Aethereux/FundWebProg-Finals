@@ -33,10 +33,35 @@ a:hover {
     text-decoration: none;
     color: inherit;
 }
+
 .MainContainer {
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     background-color: #000000;
+}
+
+.ContactsContainer {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: #000000;
+    width: 100%;
+
+}
+.ContactsContainer .navbar {
+    color: #000000; 
+}
+
+.ContactsContainer .navbar ul li {
+    color: #000000; 
+}
+
+.ContactsContainer .navbar ul li a {
+    color: #000000; 
+}
+
+.ContactsContainer .navbar ul li a:hover {
+    color: #333333; 
 }
 
 .burger-button {
@@ -52,6 +77,22 @@ a:hover {
     display: block;
     height: 2px;
     background-color: var(--navbar-text);
+    border-radius: 2px;
+}
+
+.burger-button2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20px;
+    height: 10px;
+    cursor: pointer;
+}
+
+.burger-button2 span {
+    display: block;
+    height: 2px;
+    background-color: var(--navbar-bg);
     border-radius: 2px;
 }
 
@@ -185,6 +226,64 @@ a:hover {
     background-color: var(--navbar-text);
     transition: width 0.3s ease-in-out;
 }
+
+.navbar2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    color: var(--navbar-bg);
+    padding-top: 4vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    letter-spacing: 3px;
+}
+
+.navbar2 img {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+}
+
+.navbar2 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 5vw;
+}
+
+.navbar2 ul li {
+    color: var(--navbar-bg);
+    cursor: pointer;
+    position: relative;
+}
+
+.navbar2 ul li:not(.burger-button2):hover::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--navbar-bg);
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar2 ul li:not(.burger-button2)::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--navbar-bg);
+    transition: width 0.3s ease-in-out;
+}
+
 
 .AboutUs {
     background-color: #1D202B;
@@ -362,12 +461,23 @@ a:hover {
     max-width: 1100px; 
     margin: 0 auto;
     color: var(--navbar-bg);
+    margin-bottom: 10vh;
 }
 
 .GalleryWrapper {
     display: flex;
     transition: transform 0.5s ease-in-out;
     height: 100%;
+}
+
+.Testimonial {
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #555; /* Subtle color for testimonials */
+    text-align: center;
+    padding: 10px;
 }
 
 .GalleryItem {
@@ -413,98 +523,117 @@ a:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-
-/* Desktop (<= 1440px) */
-@media (max-width: 1440px) {
-    .LandingPageText h1 {
-        font-size: 1.8rem;
-        max-width: 100%;
-    }
-
-    .ContentRow {
-        gap: 4vw;
-    }
+.ContactsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: var(--background-color);
 }
 
-/* Landscape Tablet (<= 1024px) */
-@media (max-width: 1024px) {
-    .LandingPageText h1 {
-        font-size: 1.6rem;
-        max-width: 100%;
-    }
-
-    .ContentRow {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .Logo {
-        margin-bottom: 20px;
-    }
+.MainContaine {
+    margin-top: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    color: var(--navbar-bg);
 }
 
-/* Portrait Tablet (<= 834px) */
-@media (max-width: 834px) {
-    .LandingPageText h1 {
-        font-size: 1.5rem;
-        max-width: 100%;
-    }
-
-    .ContentRow {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .VisionText, .CoreValues {
-        width: 100%;
-    }
+.ContactUs {
+    display: flex;
+    padding: 1.5rem 2rem 2rem 2rem;
+    width: 80%;
 }
 
-/* Landscape Mobile (<= 768px) */
-@media (max-width: 768px) {
-    .LandingPageText h1 {
-        font-size: 1.4rem;
-        max-width: 100%;
-    }
-
-    .ContentRow {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .Logo {
-        order: -1;
-        margin-bottom: 20px;
-    }
-
-    .MissionText {
-        order: 0;
-    }
-
-    .VisionText, .CoreValues {
-        flex: unset;
-        width: 100%;
-    }
+.ContactUs label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: var(--navbar-bg);
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
 }
 
-/* Mobile (<= 480px) */
-@media (max-width: 480px) {
-    .LandingPageText h1 {
-        font-size: 1.2rem;
-        max-width: 100%;
-    }
+#checkbox {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 
-    .ContentRow {
-        flex-direction: column;
-        gap: 10px;
-    }
+#form {
+    width: 50%;
+}
 
-    .VisionText, .CoreValues {
-        width: 100%;
-    }
+#name, #lastname, #email, #phone {
+    margin-bottom: 2.2rem;
+    padding: 1.1rem;
+    border: 1px solid var(--navbar-bg);
+    margin-top: 1rem;
+    width: 100%;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+input::placeholder,
+textarea::placeholder {
+    color: #000000bb;
+    opacity: 1;
+}
 
-    .ContactUsCTA {
-        font-size: 0.6rem;
-        letter-spacing: 2px;
-    }
+#submit-style {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: var(--navbar-bg);
+    text-align: left;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    padding: 10px 0;
+    width: 100%;
+    cursor: pointer;
+    background-color: transparent; 
+    border: none; 
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+#submit-style:hover {
+    color: var(--navbar-bg);
+    transform: scale(1.05); 
+}
+
+#header-style {
+  text-align: left;
+  font-size: 2.5rem;
+  font-weight: lighter;
+  margin: 0;
+  letter-spacing: 5px;
+}
+
+input {
+  padding: 5px;
+  margin-top: 5px;
+}
+
+select {
+  padding: 5px;
+}
+
+.Footer {
+    background-color: #6c757d; 
+    color: var(--navbar-text);
+    text-align: center;
+    padding: 20px 0;
+}
+
+.FooterContainer img {
+    margin-bottom: 10px;
+}
+
+.FooterContainer p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    margin: 0;
 }

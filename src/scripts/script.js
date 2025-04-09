@@ -63,3 +63,66 @@ document.addEventListener('DOMContentLoaded', () => {
         }, autoScrollInterval);
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('#form');
+    const checkbox = document.querySelector('#checkbox');
+    const nameInput = document.querySelector('#name');
+    const lastNameInput = document.querySelector('#lastname');
+    const emailInput = document.querySelector('#email');
+    const phoneInput = document.querySelector('#phone');
+
+    // Form validation
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = nameInput.value.trim();
+        const lastName = lastNameInput.value.trim();
+        const email = emailInput.value.trim();
+        const phone = phoneInput.value.trim();
+
+        if (!name) {
+            alert('First Name is required.');
+            return;
+        }
+
+        if (!lastName && !checkbox.checked) {
+            alert('Last Name is required.');
+            return;
+        }
+
+        if (!email || !validateEmail(email)) {
+            alert('A valid Email is required.');
+            return;
+        }
+
+        if (!phone || !validatePhone(phone)) {
+            alert('A valid Phone number is required.');
+            return;
+        }
+
+        alert('Form submitted successfully!');
+        form.submit(); 
+    });
+
+    function validateEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    function validatePhone(phone) {
+        const phoneRegex = /^[0-9]{10,15}$/; 
+        return phoneRegex.test(phone);
+    }
+
+    checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+            nameInput.placeholder = 'COMPANY NAME';
+            lastNameInput.placeholder = 'FIRST NAME';
+        } else {
+            nameInput.placeholder = 'FIRST NAME';
+            lastNameInput.placeholder = 'LAST NAME';
+        }
+    });
+});
