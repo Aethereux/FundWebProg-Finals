@@ -470,15 +470,122 @@ a:hover {
     height: 100%;
 }
 
-.Testimonial {
-    margin-top: 10px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.9rem;
-    font-style: italic;
-    color: #555; /* Subtle color for testimonials */
+.TestimonialsSection {
+    padding: 50px 20px;
+    background-color: #f9f9f9; /* Light background for contrast */
     text-align: center;
-    padding: 10px;
 }
+
+.TestimonialsContainer {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.TestimonialsContainer h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: var(--navbar-bg);
+    margin-bottom: 20px;
+}
+
+.Testimonial {
+    color: var(--navbar-bg);
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-style: italic;
+    padding: 15px;
+    text-align: left;
+}
+  
+.quote-section {
+    position: relative;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    overflow: hidden;
+    padding-bottom: 20vh;
+}
+
+.QuoteCarousel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 150px; /* Adjust based on your content */
+}
+
+.QuoteSlide {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #555;
+    text-align: center;
+}
+
+.QuoteSlide.active {
+    opacity: 1;
+}
+
+.QuoteSlide cite {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 10px;
+}
+ 
+  blockquote {
+    position: relative; 
+    padding: 10px 30px;
+    font-style: italic;
+    font-family: 'Baskervville', serif;
+    font-weight: 100;
+    padding-bottom: 50px;
+  }
+  
+  blockquote::before {
+    content: "“";
+    position: absolute;
+    top: -20px; 
+    left: 10px;
+    font-size: 5rem;
+    line-height: 1.5rem;
+    color: #e67e22;
+    font-weight: bold;
+  }
+  
+  blockquote::after {
+    content: "”";
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    font-size: 5rem;
+    line-height: 1.5rem;
+    color: #e67e22;
+    font-weight: bold;
+  }
+  
+
+  blockquote p {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+  
+
+  blockquote cite {
+    display: block;
+    text-align: right;
+    font-style: normal;
+    font-size: 1.5rem;
+    color: #555;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+
+  
 
 .GalleryItem {
     flex: 0 0 calc(33.33% - 20px);
